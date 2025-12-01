@@ -2,65 +2,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Gunjala+Gondi:wght@400..700&display=swap');
-*, html{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html, body {
+  overflow-x: hidden; 
+  overflow-y: scroll; 
 }
+
 body{
    
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     background-color: #f5f5f5;
     overflow-x: hidden;
 }
-header{
-
-    font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    width: 100%;
-    height: 50px;
-    background-color: rgb(218, 201, 230);
-    display: flex;
-    justify-content: space-between;
-    padding: 0 100px;
-    align-items: center;
-    box-shadow: 0 16px 8px -9px rgb(191, 191, 191);
-
+.nav-link:hover {
+    color: #7b1fa2 !important;
+    text-decoration: underline !important;
 }
+
+
 .logo{
-    font-size: 24px;
+    font-size: 35px;
     font-weight: 600;
     color: #0B2447;
 }
-.hamburger{
- display: none;
-}
-.nav-bar ul{
-    display:flex ;
-    list-style: none;
-}
-.nav-bar ul li a{
-    text-decoration: none;
-    display: block;
-    color: #0f1f5c;
-    font-size: 20px;
-    padding: 10px 25px;
-    margin: 0 5px;
-    transition: .2s;
-}
-.nav-bar ul li a:hover{
-    display: block;
-    content: "";
-    border-bottom: 4px solid #620a7d;
-}
 
-.nav-bar ul li a:hover::after{
-    transform: scaleX(1);
-}
-.nav-bar ul li a.active{
-    color: #19376D;
-}
 .inicio{
     margin-right: 100px;
     margin-left: 200px;
@@ -78,20 +42,28 @@ header{
     box-shadow: 0 0 65px 0 rgba(128,0,128,0.6), 0 0 85px 0 rgba(128,0,128,0.4), 0 0 110px 0 rgba(128,0,128,0.2); 
 }
 .nombre{
-    font-size: 50px;
+    font-size: 38px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
     
 }
+.div-anim{
+     width: 100%; 
+    box-sizing: border-box;
+    overflow-x: auto;
+    white-space: nowrap;
+}
 .animacion {
     color: #c350ce;
-    font-size: 20px;
-    animation: typing 3s steps(35) infinite, blink 0.5s step-end infinite;
+    font-size: clamp(19px, 3vw, 16px);
+    animation: typing 5s steps(26) infinite, blink 0.5s step-end infinite;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 2px solid transparent; /* Añade un borde transparente */
+    border-right: 2px solid transparent;
 }
+
+
 .icon{
     margin: 0 10px;
     cursor: pointer;
@@ -179,8 +151,14 @@ box-shadow:0 0 2px rgb(216, 112, 195), 0 0 15px rgb(216, 112, 195);
 .iconphp{
     width: 22px;
 }
-.iconCord{
+.iconCord {
     width: 18px;
+}
+.iconk{
+    width: 13px;
+}
+.iconMongo{
+    width: 25px;
 }
 .btn-html{
     margin: 3px;
@@ -283,6 +261,64 @@ font-style: normal
     background-color: black;
     border-radius: 10px;
     font-weight: 700px;
+
+}
+
+
+.btn-node{
+    font-family: "Noto Sans Gunjala Gondi", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: 110px;
+    padding: 4px;
+    color: #93cf4c;
+    padding-right: 6px;
+    background-color: rgb(241, 242, 246);
+    border-radius: 10px;
+    font-weight: 700px;
+    border-color: transparent;
+
+}
+.btn-mongo{
+    font-family: "Noto Sans Gunjala Gondi", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: 130px;
+    padding: 4px;
+    color: #040504;
+    padding-right: 6px;
+    background-color: #F7F7F7;
+    border-radius: 10px;
+    font-weight: 700px;
+    border-color: transparent;
+
+}
+.btn-docker{
+    font-family: "Noto Sans Gunjala Gondi", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: 110px;
+    padding: 4px;
+    color: #2391E6;
+    padding-right: 6px;
+    background-color: rgb(254, 254, 255);
+    border-radius: 10px;
+    font-weight: 700px;
+    border-color: rgb(248, 224, 224);
+
+}
+.btn-kotlin {
+    font-family: "Noto Sans Gunjala Gondi", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    width: 110px;
+    padding: 4px;
+    color: #080808;
+    padding-right: 6px;
+    background-color: rgb(244, 244, 252);
+    border-radius: 10px;
+    font-weight: 700px;
+    border-color: transparent;
 
 }
 .skill{
@@ -570,90 +606,152 @@ a[href^="https://www.linkedin.com"]:focus {
 
 @keyframes blink {
     50% {
-        border-color: #19376D; /* Cambia el color del borde en el 50% de la animación */
+        border-color: #19376D; 
     }
 }
 
-@media only screen and (max-width:900px){
-    .form_main::before {
-        position: absolute;
-        content: "";
-        width: 300px;
-        height: 300px;
-        background-color: rgb(209, 193, 255);
-        transform: rotate(45deg);
-        right: -180px;
-        bottom: 30px;
-        z-index: -1;
-        border-radius: 20px;
-        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.082);
-      }
-    .hamburger{
-        display: block;
-        cursor: pointer;
+
+@media (max-width: 768px) {
+    .perfil {
+        width: 180px; 
+        height: 180px;
+        margin-top: 20px; 
+        margin-bottom: 20px;
     }
-    .perfil{
-        margin-top: 20px;
-        text-align: center;
-        border-radius: 50%;
-        width: 300px;
-        height: 300px;
-        box-shadow: 0 0 40px 0 rgba(128,0,128,0.6), 0 0 60px 0 rgba(128,0,128,0.4), 0 0 80px 0 rgba(128,0,128,0.2);    
-        transition: box-shadow 0.3s ease;
+    .nombre {
+        font-size: 35px; 
     }
-    .button{
-        align-items: center;
-        justify-content: center;
-        border-radius: 15px;
-        border: 2px;
-        background-color: rgb(228, 157, 213);
-        padding: 10px;
-        box-shadow: 0 0 5px palevioletred, 0 0 25px palevioletred;
-        margin: 10px;
-        margin-left: 40px
-    }
-.hamburger .line{
-    align-items: center;
-    width: 30px;
-    height: 3px;
-    background: #0B2447;
-    margin: 6px 0;
 }
-.active {
-    background-color: white; /* Cambia el fondo a blanco */
-    height: auto;
-}
-.nav-bar{
-    height: 20%;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    width: 100vw;
-    transition: 0.5s;
-    overflow: hidden;
+.iconos-botones-group {
+    display: flex;
+    align-items: center; 
+    flex-wrap: wrap; 
+    margin-top: 15px; 
 }
 
-.nav-bar ul{
-    width: 100vw;
-    background-color: transparent;
-    display: block;
-    width: fit-content;
-    margin: 50px auto 0 auto;
-    text-align: center;
-    transition: 0.5s;
-    opacity: 0;
+.iconos-botones-group a:last-child {
+    margin-left: auto; 
+    margin-right: 0;
 }
-.nav-bar.active ul{
-    opacity: 1;
+
+.iconos-botones-group .icon {
+    margin-right: 15px; 
 }
-.nav-bar ul li a {
-    margin-bottom: 12px;
+
+/* Tarjeta del formulario */
+#contacto .card {
+    background: #ffffff;
+    border: 1px solid #F3A8D533; 
+    box-shadow: 0 0 25px #F3A8D555;
+    border-radius: 16px;
 }
-.perfil{
-    margin-left: 0px;
-  
+
+/* Título */
+#contacto h3 {
+    color: #A86CC3; 
 }
+
+/* Labels */
+#contacto .form-label {
+    color: #9037b9;
+    font-weight: 600;
+}
+
+/* Inputs y textarea */
+#contacto .form-control {
+    border: 1px solid #D9B6E6; 
+    border-radius: 10px;
+    padding: 0.75rem;
+    transition: 0.2s ease-in-out;
+}
+
+#contacto .form-control:focus {
+    border-color: #A86CC3;
+    box-shadow: 0 0 15px #F3A8D533;
+}
+
+/* Botón */
+#contacto button.btn-primary {
+    background-color: #f08ec9;   
+    border: none;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 12px;
+    padding: 12px;
+    transition: 0.3s ease-in-out;
+}
+
+#contacto button.btn-primary:hover {
+    background-color: #D980B9;
+    box-shadow: 0 0 18px #F3A8D5;
+}
+
+/* Teléfono */
+#contacto a {
+    color: #A86CC3;
+}
+
+#contacto a:hover {
+    color: #D980B9;
+}
+#contacto h3 {
+    font-size: 28px;
+}
+
+#contacto p {
+    font-size: 18px;
 }
 
 
+@media (max-width: 768px) {
+    #contacto h3, 
+    #contacto p {
+        text-align: justify;
+    }
+}
+
+
+#contacto .card {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#contacto .col-lg-6:last-child {
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (max-width: 768px) {
+   
+   
+    #contacto .card {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    #contacto .col-lg-6 {
+        text-align: start;
+    }
+
+    #contacto form .form-control,
+    #contacto textarea {
+        width: 100%;
+    }
+}
+   .contact-text,
+    .contact-text a {
+        font-size:18px !important;   
+        color: #585353 !important;        
+        font-weight: 500;
+        line-height: 1.7;
+        margin-bottom: 10px;
+    }
+
+ 
+    .contact-text i {
+        font-size: 20px !important;
+        color: #7b1fa2;
+    }

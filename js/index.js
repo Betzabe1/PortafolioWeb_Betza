@@ -25,7 +25,7 @@ sr.reveal('.sobMiText', {
     distance: '200px'
 });
 sr.reveal('.card', {
-    duration: 400,
+    duration: 4000,
     origin: 'right',
     distance: '300px'
 });
@@ -43,22 +43,48 @@ sr.reveal('.cont', {
 });
 
 
-const scrollreveal = require("scrollreveal");
 
+
+// Validar formulario
 document.addEventListener("DOMContentLoaded", function() {
-    // Selecciona la hamburguesa
-    var hamburger = document.querySelector(".hamburger");
-    // Asigna la función de clic
-    hamburger.onclick = function() {
-        // Selecciona el nav-bar
-        var navBar = document.querySelector(".nav-bar");
-        // Alterna la clase 'active' para cambiar el fondo
-        navBar.classList.toggle("active");
-    };
+    const btn = document.getElementById("btnEnviar");
+    const form = document.getElementById("contactForm");
+    const destinatario = document.getElementById("destinatario");
+    const correo = document.getElementById("correo");
+    const mensaje = document.getElementById("mensaje");
+
+    btn.addEventListener("click", function() {
+        destinatario.value = "miriambetzrobrey@gmail.com";
+
+        const emailVal = correo.value.trim();
+        const mensajeVal = mensaje.value.trim();
+
+        if (!emailVal || !mensajeVal) {
+            Swal.fire({
+                icon: "error",
+                title: "Campos vacíos",
+                text: "Por favor llena todos los campos.",
+                confirmButtonColor: "#7b1fa2"
+            });
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(emailVal)) {
+            Swal.fire({
+                icon: "error",
+                title: "Correo inválido",
+                text: "Por favor ingresa un correo electrónico válido.",
+                confirmButtonColor: "#7b1fa2"
+            });
+            return;
+        }
+
+        Swal.fire({
+            icon: "success",
+            title: "Mensaje enviado",
+            text: "Tu mensaje fue enviado correctamente.",
+            confirmButtonColor: "#7b1fa2"
+        }).then(() => form.submit());
+    });
 });
-function limpiarPlaceholder(){
-    var textarea=document.getElementById('textarea');
-    if(textarea.ariaValueMax.trim()==""){
-        textarea.value="";
-    }
-}
